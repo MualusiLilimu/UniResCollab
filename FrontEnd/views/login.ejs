@@ -1,12 +1,17 @@
-<%- include('partials/header') %>
 
+</section><%- include('partials/header') %>
 
-<!-- This will write the role of the person who is registering(not sure if we need it :(   ))-->
-<h2><%= role.charAt(0).toUpperCase() + role.slice(1) %> Login</h2>
-
+<!-- Navigation -->
+<section class="top_navigation">
+  <!--This will take you back to the home page-->
+  <header style="padding: 10px 20px; position: fixed; top: 0; left: 0; width: 100%; z-index: 10; background: transparent;">
+    <a href="/" style="color: #080710; text-decoration: none; font-size: 16px;">Home</a>
+  </header>
+</section>
 
 <form>
   <!-- Login form fields here -->
+  <h3>Login</h3>
   <section class="container">
     <label for="username"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="username" required>
@@ -15,10 +20,14 @@
     <input type="password" placeholder="Enter Password" name="password" required>
 
     <button type="submit">Login</button>
+
+    <a href="/forgot" style="align-content: center;">Forgot password?</a>
+
+    <p>Don’t have an account?</p>
+    <a href="/register" class="signup_button">Sign up</a>
   </section>
-  <a href="/forgot">Forgot password?</a>
 </form>
 
-<!--IF the user doesnt have an account they can create one-->
-<a href="/register">Don’t have an account? Sign up</a>
 <%- include('partials/footer') %>
+
+
