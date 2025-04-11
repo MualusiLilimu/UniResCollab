@@ -1,0 +1,83 @@
+/*This is the layout structure of the home page(styling for Index.ejs only)*/
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f7f5;
+  }
+
+  .layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 10%;
+    background-color: #f2f7f5;
+    min-height: 90vh;
+  }
+
+  .layout_text {
+    max-width: 50%;
+  }
+
+  .layout_text h1 {
+    font-size: 2.5rem;
+    color: #033c4a;
+    margin-bottom: 20px;
+  }
+
+  .layout_text p {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 30px;
+  }
+
+  .layout_text .create_account_btn {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    background-color: #080710;
+    color: #ffffff;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /*Don't forget to fix the image you will include in the home page*/
+  .layout_image img {
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .project_name {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #080710;
+    text-decoration: none;
+  }
+
+  .top_navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .top_navigation a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: #080710;
+    font-weight: 500;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px 0;
+  }
+  
