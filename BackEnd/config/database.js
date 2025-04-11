@@ -10,7 +10,7 @@ mongoose.connect("mongodb+srv://<username>:<password>@softwaredesigndatabase.fvl
     console.log("failed to connect");
 })
 
-const LogInSchema = new mongoose.Schema({
+const LoginSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
