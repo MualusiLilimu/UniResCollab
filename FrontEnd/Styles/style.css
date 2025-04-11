@@ -1,3 +1,5 @@
+/*This is the styling for the Login and Sign up pages*/
+
 * {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
@@ -103,6 +105,7 @@ button {
 
 
 /*The sign up button is located in the login.ejs*/
+/*The following is the styling for the button*/
 .signup_button {
   display: inline-block;
   text-align: center;
@@ -127,6 +130,8 @@ footer {
   margin-top: auto;
 }
 
+
+/*This is the styling for the roles selection*/
 .role-form {
   width: 320px;
   background: rgba(255, 255, 255, 0.9);
