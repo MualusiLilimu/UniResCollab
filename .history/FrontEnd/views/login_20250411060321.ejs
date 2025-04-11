@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+
+
+<!-- This will write the role of the person who is registering(not sure if we need it)-->
+
+<form method="POST" action="\">
+  <!-- Login form fields here -->
+  <section class="container">
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+
+    <button type="submit">Login</button>
+  </section>
+  <a href="/forgot">Forgot password?</a>
+</form>
+
+<!--IF the user doesnt have an account they can create one-->
+<a href="/register">Don’t have an account? Sign up</a>
+<%- include('partials/footer') %>
