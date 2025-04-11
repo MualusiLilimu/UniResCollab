@@ -1,18 +1,47 @@
-<%- include('partials/header') %>
+</section><%- include('partials/header') %>
 
-<h2>Sign Up</h2>
+<!-- Navigation -->
+<section class="top_navigation">
+  <!--This will take you back to the home page-->
+  <header style="padding: 10px 20px; position: fixed; top: 0; left: 0; width: 100%; z-index: 10; background: transparent;">
+    <a href="/" style="color: #080710; text-decoration: none; font-size: 16px;">Home</a>
+  </header>
+</section>
+
 
 <!--Sign up form-->
 <form>
-  <input type="text" placeholder="Username" required>
-  <input type="email" placeholder="Email" required>
-  <input type="password" placeholder="password" required>
-  <button type="submit">Sign Up</button>
-</form>
+    <h3>Sign Up</h3>
 
-<!--Sign up with 3rd party-->
-<p>Or sign up with:</p>
-<a href="/auth/google">Google</a>
-<a href="/auth/facebook">Facebook</a>
-<a href="/auth/github">GitHub</a>
+    <label for="username">Username</label>
+    <input type="text" placeholder="Enter your username"  required>
+
+    <label for="email">Email</label>
+    <input type="email" placeholder="Enter your email" required>
+
+    <label for="password">Password</label>
+    <input type="password" placeholder="Enter your password" required>
+
+    <label for="confirm_password">Confirm Password</label>
+    <input type="confirm_password" placeholder="Confirm your password" required>
+
+
+    <button type="submit">Sign Up</button>
+
+
+     <!--Sign up with 3rd party-->
+     <p>Or sign up with:</p>
+     <section class="third_party">
+        <button >
+          <i class="fab fa-google"></i> Google
+        </button>
+        <button>
+          <i class="fab fa-facebook"></i> Facebook
+        </button>
+        <button>
+          <i class="fab fa-github"></i>  GitHub
+        </button>
+    </secton>
+      
+</form>
 <%- include('partials/footer') %>
