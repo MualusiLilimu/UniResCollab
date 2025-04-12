@@ -1,33 +1,40 @@
+<%- include('partials/header') %>
 
-</section><%- include('partials/header') %>
+<body id="login-page">
+ 
 
-<!-- Navigation -->
-<section class="top_navigation">
-  <!--This will take you back to the home page-->
-  <header style="padding: 10px 20px; position: fixed; top: 0; left: 0; width: 100%; z-index: 10; background: transparent;">
-    <a href="/" style="color: #080710; text-decoration: none; font-size: 16px;">Home</a>
-  </header>
-</section>
 
-<form>
-  <!-- Login form fields here -->
-  <h3>Login</h3>
-  <section class="container">
-    <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="username" required>
 
-    <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
+  <!-- Main Content Wrapper -->
+  <main class="auth-container">
+    <!-- Login Form Section -->
+    <section class="auth-box login-box">
+      <form action="/login" method="POST" class="auth-form">
+        <h2>Sign In</h2>
 
-    <button type="submit">Login</button>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="Username" placeholder="Enter username or email">
 
-    <a href="/forgot" style="align-content: center;">Forgot password?</a>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="Password" placeholder="Enter password">
 
-    <p>Don’t have an account?</p>
-    <a href="/register" class="signup_button">Sign up</a>
-  </section>
-</form>
+        <input type="submit" value="Login" class="auth-button">
+
+        <a href="/forgotPassword" class="forgot-link">Forgot Password?</a>
+      </form>
+    </section>
+
+    <!-- Call to Sign Up Section -->
+    <section class="auth-box alt-box" id="container2">
+      <h2>Welcome Back!</h2>
+      <p>Don't have an account?</p>
+      <form action="/roles" method="GET">
+        <button type="submit" class="auth-button alt-button">Sign Up</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
 
 <%- include('partials/footer') %>
-
-

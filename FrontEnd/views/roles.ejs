@@ -1,21 +1,28 @@
 <%- include('partials/header') %>
 
-<!-- Navigation -->
-<section class="top_navigation">
-  <!--This will take you back to the home page-->
-  <header style="padding: 10px 20px; position: fixed; top: 0; left: 0; width: 100%; z-index: 10; background: transparent;">
-    <a href="/" style="color: #080710; text-decoration: none; font-size: 16px;">Home</a>
-  </header>
-</section>
 
-<!--This is the role selection form-->
-<form class="role-form">
-  <h3>Select your role to continue:</h3>
-  <section class="role-buttons">
-    <a href="/login/researcher" class="roles">Researcher</a>
-    <a href="/login/reviewer" class="roles">Reviewer</a>
-    <a href="/login/admin" class="roles">Admin</a>
+<body id="roles-page">
+
+
+
+<main class="roles-main">
+  <!--This is the role selection form-->
+  <section class="roles-section">
+    <form class="role-form">
+      <h3>Select your role to continue:</h3>
+      <section class="role-buttons">
+        <a href="/Register" class="roles">Researcher</a>
+        <a href="/Register" class="roles">Reviewer</a>
+        <a href="/Register" class="roles">Admin</a>
+      </section>
+    </form>
   </section>
-</form>
+ 
+
+</main>
+
+
+</body>
+
 
 <%- include('partials/footer') %>

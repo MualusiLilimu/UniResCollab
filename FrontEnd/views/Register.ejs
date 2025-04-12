@@ -1,47 +1,47 @@
-</section><%- include('partials/header') %>
+<%- include('partials/header') %>
 
-<!-- Navigation -->
-<section class="top_navigation">
-  <!--This will take you back to the home page-->
-  <header style="padding: 10px 20px; position: fixed; top: 0; left: 0; width: 100%; z-index: 10; background: transparent;">
-    <a href="/" style="color: #080710; text-decoration: none; font-size: 16px;">Home</a>
-  </header>
-</section>
+<body id="signup-page">
+ 
 
 
-<!--Sign up form-->
-<form>
-    <h3>Sign Up</h3>
 
-    <label for="username">Username</label>
-    <input type="text" placeholder="Enter your username"  required>
-
-    <label for="email">Email</label>
-    <input type="email" placeholder="Enter your email" required>
-
-    <label for="password">Password</label>
-    <input type="password" placeholder="Enter your password" required>
-
-    <label for="confirm_password">Confirm Password</label>
-    <input type="confirm_password" placeholder="Confirm your password" required>
-
-
-    <button type="submit">Sign Up</button>
-
-
-     <!--Sign up with 3rd party-->
-     <p>Or sign up with:</p>
-     <section class="third_party">
-        <button >
-          <i class="fab fa-google"></i> Google
+  <!-- Main Content Wrapper -->
+  <main class="auth-container">
+    <!-- Sign Up Section -->
+    <section class="auth-box signup-box">
+      <h2>Sign Up</h2>
+    
+      <form action="/auth/google" method="GET">
+        <button type="submit" class="auth-button google-btn">
+          <i class="fab fa-google"></i> Sign Up with Google
         </button>
-        <button>
-          <i class="fab fa-facebook"></i> Facebook
+      </form>
+    
+      <form action="/auth/github" method="GET">
+        <button type="submit" class="auth-button github-btn">
+          <i class="fab fa-github"></i> Sign Up with GitHub
         </button>
-        <button>
-          <i class="fab fa-github"></i>  GitHub
+      </form>
+    
+      <form action="/auth/facebook" method="GET">
+        <button type="submit" class="auth-button facebook-btn">
+          <i class="fab fa-facebook-f"></i> Sign Up with Facebook
         </button>
-    </secton>
-      
-</form>
+      </form>
+    </section>
+    
+
+    <!-- Call to Log In Section -->
+    <section class="auth-box alt-box" id="container2">
+      <h2>Welcome to sign up!</h2>
+      <p>Already have an account?</p>
+      <form action="/login" method="GET">
+        <button type="submit" class="auth-button alt-button">Login</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
 <%- include('partials/footer') %>

@@ -25,6 +25,11 @@ app.get('/login', (req, res) => {
     res.render('login')
 })
 
+app.get('/about', (req, res) => {
+    res.render('about')
+})
+
+
 app.get('/Register', (req, res) => {
     res.render('Register')
 })
@@ -61,6 +66,10 @@ app.get('/forgotPassword', (req, res) => {
     res.render('forgotPassword')
 })
 
+app.use(express.static('public'));
+
+
+app.use('/styles', express.static(path.join(__dirname, 'frontend/styles')));
 
 
 // Start server
