@@ -1,0 +1,31 @@
+
+</section><%- include('partials/header') %>
+
+<!-- Navigation -->
+<section class="top_navigation">
+  <!--This will take you back to the home page-->
+  <header style="padding: 10px 20px; position: fixed; top: 0; left: 0; width: 100%; z-index: 10; background: transparent;">
+    <a href="/" style="color: #080710; text-decoration: none; font-size: 16px;">Home</a>
+  </header>
+</section>
+
+<form>
+  <!-- Login form fields here -->
+  <h3>Login</h3>
+  <section class="container">
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+
+    <button type="submit">Login</button>
+
+    <a href="/forgot" style="align-content: center;">Forgot password?</a>
+
+    <p>Don’t have an account?</p>
+    <a href="/register" class="signup_button">Sign up</a>
+  </section>
+</form>
+
+<%- include('partials/footer') %>
