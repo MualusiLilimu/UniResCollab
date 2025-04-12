@@ -66,7 +66,18 @@ app.get('/forgotPassword', (req, res) => {
     res.render('forgotPassword')
 })
 
+app.get('/AI-Page', (req, res) => {
+    res.render('AI-Page')
+})
+
+app.get('/Username', (req, res) => {
+    res.render('Username')
+})
+
+
 app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'frontend')));
+
 
 
 app.use('/styles', express.static(path.join(__dirname, 'frontend/styles')));

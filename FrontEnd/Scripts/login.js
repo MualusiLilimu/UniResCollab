@@ -26,3 +26,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
+
+  document.getElementById('usernameForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const username = document.getElementById('username').value.trim();
+    
+    if (username) {
+        // Store username (in a real app, you'd verify server-side)
+        sessionStorage.setItem('username', username);
+        
+        // Redirect to landing page
+        window.location.href = 'landing.html';
+    }
+});

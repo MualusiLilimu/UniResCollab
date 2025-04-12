@@ -9,19 +9,23 @@
   <main class="auth-container">
     <!-- Login Form Section -->
     <section class="auth-box login-box">
-      <form action="/login" method="POST" class="auth-form">
+      
         <h2>Sign In</h2>
-
-        <label for="username">Username</label>
-        <input type="text" id="username" name="Username" placeholder="Enter username or email">
-
-        <label for="password">Password</label>
-        <input type="password" id="password" name="Password" placeholder="Enter password">
-
-        <input type="submit" value="Login" class="auth-button">
-
-        <a href="/forgotPassword" class="forgot-link">Forgot Password?</a>
-      </form>
+        <form action="/auth/google" method="GET">
+          <button type="submit" class="auth-button google-btn">
+            <i class="fab fa-google"></i> Continue with Google
+          </button>
+        </form>
+      
+        <form action="/auth/github" method="GET">
+          <button type="submit" class="auth-button github-btn">
+            <i class="fab fa-github"></i> Continue with GitHub
+          </button>
+        </form>
+      
+      
+        
+     
     </section>
 
     <!-- Call to Sign Up Section -->
