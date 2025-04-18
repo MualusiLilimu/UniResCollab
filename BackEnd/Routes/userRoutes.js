@@ -32,6 +32,16 @@ router.get('/register',controller.register)
 router.get('/AI-Page',function(req,res){
   res.render('AI-Page');
 });
+app.get('/Reviewer/Home', async (req, res) => {
+  try {
+    const projects = await Project.find().populate('creator', 'username');
+    const users = await User.find({}, 'username role');
+    res.render('ReviewerHome', { user: req.user, projects, users });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error loading reviewer dashboard');
+  }
+});
 
 // Here I am setting a user's role in the database after he select the role
 router.get('/set-role', async (req, res) => {
