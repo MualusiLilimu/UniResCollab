@@ -1,15 +1,47 @@
-<h1>This is the Researcher's Home Page</h1>
+<%- include('partials/appheader') %>
 
-<p>Welcome, <%= user.username %>!</p>
+<main id="reseacher" class="ReasearcherHomeContainer">
 
-<form action="/logout" method="get">
-    <button type="submit">Logout</button>
-</form>
-<form action="/researcher/projects/create" method="get">
-    <button type="submit">Create Project</button>
-</form>
-<form action="/researcher/projects/my-projects" method="get">
-    <button type="submit">View My Projects</button>
-</form>
+    <header>
+        <h1 id="title">RESEARCHER'S HOME PAGE</h1>
+        <h3 id="welcome">Welcome, <%= user.username %>!</h3>
+    </header>
 
-<!-- PLEASE make sure that you have these inside ReasearcherHome.ejs when you design -->
+    <!-- Slideshow Section -->
+    <section id="slideshow" aria-label="Slideshow of Research Highlights">
+        <figure class="slide">
+            <img src="/research1.png" alt="Research team discussing data" />
+            <figcaption>Collaborate with top minds and share ideas in real-time</figcaption>
+        </figure>
+        <figure class="slide">
+            <img src="/research5.jpg" alt="Project dashboard screenshot" />
+            <figcaption>Track your research progress from idea to publication</figcaption>
+        </figure>
+        <figure class="slide">
+            <img src="/research4.webp" alt="Researcher working in lab" />
+            <figcaption>Define requirements and manage resources efficiently</figcaption>
+        </figure>
+    </section>
+
+    <!-- Create Project Section -->
+    <section id="create-project" aria-labelledby="create-project-heading">
+        <h2 id="create-project-heading">Start a New Research Project</h2>
+        <h4>Have a new idea? Launch your research project here. Specify your research goals, resources needed, and open collaboration slots for others to join!<h4>
+        <form action="/researcher/projects/create" method="get">
+            <button type="submit">Create Project</button>
+        </form>
+    </section>
+
+    <!-- View Projects Section -->
+    <section id="my-projects" aria-labelledby="my-projects-heading">
+        <h2 id="my-projects-heading">Your Projects</h2>
+        <h4>View all the research projects you've created or collaborated on. Monitor progress, update requirements, and manage team members easily.</h4>
+        <form action="/researcher/projects/my-projects" method="get">
+            <button type="submit">View My Projects</button>
+        </form>
+    </section>
+
+</main>
+
+<script src="../Scripts/reseacher.js"></script>
+<%- include('partials/footer') %>

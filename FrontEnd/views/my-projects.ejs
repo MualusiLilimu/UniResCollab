@@ -1,14 +1,53 @@
-<h2>Your Projects</h2>
+<%- include('partials/appheader') %>
 
-<ul>
-  <% if (projects.length === 0) { %>
-    <p>You have no projects yet.</p>
-  <% } else { %>
-    <% projects.forEach(project => { %>
-      <li>
-        <a href="/researcher/projects/<%= project._id %>"><%= project.title %></a>
-      </li>
-    <% }) %>
-  <% } %>
-</ul>
-<!-- PLEASE make sure that you have these when you design the UI, you can DESIGN them to however you like -->
+<main class="MyProjectsPage">
+  <header>
+    <h1 id="page-title">Your Research Projects</h1>
+    <p>Manage all your ongoing and completed research work.</p>
+  </header>
+
+  <!-- Create New Project -->
+  <nav aria-label="Project Navigation">
+    <form action="/researcher/projects/create" method="get">
+      <button type="submit">+ Create New Project</button>
+    </form>
+  </nav>
+
+  <!-- List of Projects -->
+  <section aria-labelledby="projects-list-heading">
+    <h2 id="projects-list-heading">My Projects</h2>
+
+    <% if (projects.length === 0) { %>
+      <p>You have not created any projects yet.</p>
+    <% } else { %>
+      <ul class="project-list">
+        <% projects.forEach(project => { %>
+          <li class="project-item">
+            <article>
+              <h3>
+                <a href="/researcher/projects/<%= project._id %>">
+                  <%= project.title %>
+                </a>
+              </h3>
+
+              <p><strong>Description:</strong> <%= project.description %></p>
+              <p><strong>Public:</strong> <%= project.isPublic ? "Yes" : "No" %></p>
+
+              <!-- Edit Project -->
+              <form action="/researcher/projects/<%= project._id %>/edit" method="get" style="display: inline;">
+                <button type="submit">Edit</button>
+              </form>
+
+              <!-- Delete Project -->
+              <form action="/researcher/projects/<%= project._id %>?_method=DELETE" method="post" style="display: inline;">
+                <button type="submit" onclick="return confirm('Are you sure you want to delete this project?');">Delete</button>
+              </form>
+            </article>
+          </li>
+        <% }) %>
+      </ul>
+    <% } %>
+  </section>
+</main>
+
+<%- include('partials/footer') %>

@@ -1,8 +1,38 @@
-<h1>This is the Reviewer's HomePage</h1>
+<%- include('partials/appheader') %>
 
-<p>Welcome, <%= user.username %>!</p>
+<main>
+  <header>
+    <h1>Reviewer Dashboard</h1>
+    <p>Welcome, <%= user.username %>! Here’s what’s happening on the platform.</p>
+  </header>
 
-<form action="/logout" method="get">
+  <section>
+    <h2>Platform Overview</h2>
+    <p>This section gives you insight into the current status of projects, users, and research activities.</p>
+
+    <ul>
+      <li>Total projects: visible to reviewers</li>
+      <li>Pending projects: under review</li>
+      <li>Approved projects: successfully reviewed</li>
+      <li>Rejected projects: those not meeting criteria</li>
+      <li>Total users: researchers and admins included</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Recent Activity</h2>
+    <p>Reviewers can monitor progress but do not modify content.</p>
+
+    <ul>
+      <li>Researcher A submitted a project titled "AI in Healthcare"</li>
+      <li>Project "Data Mining Techniques" was approved</li>
+      <li>Project "Quantum Computing 101" is pending review</li>
+    </ul>
+  </section>
+
+  <form action="/logout" method="get">
     <button type="submit">Logout</button>
-</form>
-  
+  </form>
+</main>
+
+<%- include('partials/footer') %>

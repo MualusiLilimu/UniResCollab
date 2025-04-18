@@ -1,23 +1,54 @@
-<h1>Create a New Project</h1>
+<%- include('partials/appheader') %>
 
-<form action="/researcher/projects/create" method="POST">
-    <label>Title:</label>
-    <input type="text" name="title" required><br>
+<main class="CreateProjectPage">
+    <header>
+        <h1>Create a New Research Project</h1>
+        <p>Fill in the details below to create a project, define its requirements, and invite collaborators.</p>
+    </header>
 
-    <label>Description:</label>
-    <textarea name="description" required></textarea><br>
+    <!-- Main Create Project Form -->
+    <section aria-labelledby="create-project-heading">
+        <h2 id="create-project-heading">Project Details</h2>
+        <form action="/researcher/projects/create" method="POST">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
 
-    <label>Requirements (comma separated):</label>
-    <input type="text" name="requirements" required><br>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
 
-    <label>Make Public:</label>
-    <select name="isPublic">
-        <option value="true">Yes</option>
-        <option value="false">No</option>
-    </select><br>
+            <label for="requirements">Requirements <small>(comma separated)</small>:</label>
+            <input type="text" id="requirements" name="requirements" required>
 
-    <button type="submit">Submit Project</button>
-</form>
-<form action="/researcher/Home" method="get">
-  <button type="submit">Back to Home</button>
-</form>
+            <label for="isPublic">Make Public:</label>
+            <select name="isPublic" id="isPublic">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+
+            <button type="submit">Submit Project</button>
+        </form>
+    </section>
+
+    <!-- Collaborator Invitations -->
+    <section aria-labelledby="invite-collaborators-heading">
+        <h2 id="invite-collaborators-heading">Invite Collaborators</h2>
+        <form action="/researcher/projects/invite" method="POST">
+            <label for="collab-project-title">Project Title:</label>
+            <input type="text" name="projectTitle" id="collab-project-title" required>
+
+            <label for="collaborators">Collaborator Emails <small>(comma separated)</small>:</label>
+            <input type="text" name="collaborators" id="collaborators" required>
+
+            <button type="submit">Send Invites</button>
+        </form>
+    </section>
+
+    <!-- Back to Home -->
+    <nav>
+        <form action="/researcher/Home" method="get">
+            <button type="submit">Back to Home</button>
+        </form>
+    </nav>
+</main>
+
+<%- include('partials/footer') %>

@@ -1,8 +1,66 @@
-<h1>This is the Admin's Home page</h1>
+<%- include('partials/appheader') %>
 
-<p>Welcome, <%= user.username %>!</p>
+<main class="AdminHomePage">
+  <header>
+    <h1>Admin Dashboard</h1>
+    <p>Welcome, <%= user.username %>! You have full administrative access.</p>
+  </header>
 
-<form action="/logout" method="get">
-    <button type="submit">Logout</button>
-</form>
-  
+  <!-- Researcher Actions -->
+  <section aria-labelledby="research-actions-heading">
+    <h2 id="research-actions-heading">Researcher Tools</h2>
+
+    <form action="/researcher/projects/create" method="get">
+      <button type="submit">Create New Project</button>
+    </form>
+
+    <form action="/researcher/projects/my-projects" method="get">
+      <button type="submit">View All Projects</button>
+    </form>
+  </section>
+
+  <!-- User Management -->
+  <section aria-labelledby="user-management-heading">
+    <h2 id="user-management-heading">User Management</h2>
+
+    <!-- Add User -->
+    <article>
+      <h3>Add a New User</h3>
+      <form action="/admin/users/add" method="post">
+        <label for="new-username">Username:</label>
+        <input type="text" id="new-username" name="username" required>
+
+        <label for="new-password">Password:</label>
+        <input type="password" id="new-password" name="password" required>
+
+        <label for="role">Role:</label>
+        <select name="role" id="role" required>
+          <option value="researcher">Researcher</option>
+          <option value="admin">Admin</option>
+        </select>
+
+        <button type="submit">Add User</button>
+      </form>
+    </article>
+
+    <!-- Remove User -->
+    <article>
+      <h3>Remove an Existing User</h3>
+      <form action="/admin/users/remove" method="post">
+        <label for="remove-username">Username:</label>
+        <input type="text" id="remove-username" name="username" required>
+
+        <button type="submit">Remove User</button>
+      </form>
+    </article>
+  </section>
+
+  <!-- Logout -->
+  <nav aria-label="Logout">
+    <form action="/logout" method="get">
+      <button type="submit">Logout</button>
+    </form>
+  </nav>
+</main>
+
+<%- include('partials/footer') %>
