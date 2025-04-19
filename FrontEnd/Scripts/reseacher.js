@@ -1,28 +1,21 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.querySelectorAll("#slideshow figure");
-    let current = 0;
-
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.classList.toggle("active", i === index);
-        });
+document.addEventListener('DOMContentLoaded', () => {
+    // Auto-advancing slideshow
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    
+    function cycleSlides() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
     }
 
-    function nextSlide() {
-        current = (current + 1) % slides.length;
-        showSlide(current);
-    }
+    // Start automatic rotation (7 seconds per slide)
+    let slideInterval = setInterval(cycleSlides, 7000);
 
-    showSlide(current);
-    setInterval(nextSlide, 4000);
+    // Pause on hover
+    const slider = document.querySelector('.auto-slideshow');
+    slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    slider.addEventListener('mouseleave', () => {
+        slideInterval = setInterval(cycleSlides, 7000);
+    });
 });
-
-// Simple Slideshow
-let currentSlide = 0;
-const slides = document.querySelectorAll('#slideshow .slide');
-
-setInterval(() => {
-    slides[currentSlide].style.display = 'none';
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].style.display = 'block';
-}, 4000);

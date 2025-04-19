@@ -1,47 +1,131 @@
 <%- include('partials/appheader') %>
 
-<main id="reseacher" class="ReasearcherHomeContainer">
+<body class="researchbody">
+    <main id="researcher" class="research-portal">
+        <header class="portal-header">
+            <h1 class="portal-title">Research HOME</h1>
+            <p class="welcome-message">Welcome back, <strong class="username-glow"><%= user.username %></strong></p>
+            <p class="portal-tagline">Where Innovation Meets Collaboration</p>
+           
+                <form action="/researcher/projects/project-details" method="get">
+                    <button type="submit" class="neu-button">
+                        Project Details →
+                    </button>
+                </form>
+              
+                <form action="/Reviewer/Home" method="get">
+                    <button type="submit" class="neu-button">
+                        Research Reviewer' Page →
+                    </button>
+                </form>
+        </header>
+    
+        <!-- Slideshow Section -->
+        <section class="auto-slideshow" aria-label="Research highlights">
+            <figure class="slide active">
+                <img src="/research1.png" alt="Team collaboration" loading="lazy">
+                <figcaption class="slide-caption">
+                    <h3>Global Synergy</h3>
+                    <p>Connect with 50,000+ researchers across 150 institutions worldwide</p>
+                </figcaption>
+            </figure>
+            <figure class="slide">
+                <img src="/research5.jpg" alt="Data analytics" loading="lazy">
+                <figcaption class="slide-caption">
+                    <h3>Intelligent Insights</h3>
+                    <p>Real-time analytics powered by machine learning algorithms</p>
+                </figcaption>
+            </figure>
+            <figure class="slide">
+                <img src="/research4.webp" alt="Laboratory research" loading="lazy">
+                <figcaption class="slide-caption">
+                    <h3>Resource Optimization</h3>
+                    <p>Smart allocation of equipment and research materials</p>
+                </figcaption>
+            </figure>
+        </section>
+    
+        <!-- Action Grid -->
+        <section class="research-actions">
+            <article class="action-cards">
+                <header class="card-header">
+                    <h2>Launch New Project Expedition</h2><br>
+                    <h4 class="card-subtitle">Pioneer groundbreaking research</h4>
+                </header><br>
+                <section class="card-content">
+                    <ul class="research-features">
+                        <li>Multi-dimensional timeline planning</li><br>
+                        <li>Automated resource forecasting</li><br>
+                        <li>Collaborator matching system</li><br>
+                        <li>Ethics compliance integration</li>
+                    </ul><br>
+                    <form action="/researcher/projects/create" method="get">
+                        <button type="submit" class="neu-button">
+                            Begin Research Journey →
+                        </button>
+                    </form>
+                </section>
+            </article>
+    
+            <article class="action-cards">
+                <header class="card-header">
+                    <h2>Research Command Center</h2><br>
+                    <h4 class="card-subtitle">Manage your Research portfolio</h4>
+                </header><br>
+                <section class="card-content">
+                    <ul class="research-features">
+                        <li>3D project visualization</li><br>
+                        <li>Team performance metrics</li><br>
+                        <li>Automated reporting suite</li><br>
+                        <li>Knowledge graph integration</li>
+                    </ul><br>
+                    <form action="/researcher/projects/my-projects" method="get">
+                        <button type="submit" class="neu-button">
+                            Access Research Matrix →
+                        </button>
+                    </form>
+                </section>
+            </article>
+        </section>
+    
+        <!-- Collaboration Suite -->
+        <section class="collab-suite">
+            <h2 class="suite-title">Collaboration Tools</h2><br>
+            <section class="suite-grid">
+                <article class="tool-card">
+                    <h3>Neural Discussions</h3><br>
+                    <h5>Context-aware messaging with AI-powered knowledge extraction</h5><br>
+                    <ul class="tool-features">
+                        <li>Real-time translation</li><br>
+                        <li>Citation generation</li><br>
+                        <li>Decision tracking</li>
+                    </ul>
+                </article>
+    
+                <article class="tool-card">
+                    <h3>Quantum Documents</h3><br>
+                    <h5>Blockchain-versioned research papers with dynamic citations</h5><br>
+                    <ul class="tool-features">
+                        <li>Auto-formatting</li><br>
+                        <li>Plagiarism shield</li><br>
+                        <li>Multi-modal editing</li>
+                    </ul>
+                </article>
+    
+                <article class="tool-card">
+                    <h3>Milestone Sentinel</h3><br>
+                    <h5>Predictive progress tracking with risk mitigation</h5><br>
+                    <ul class="tool-features">
+                        <li>AI forecasting</li><br>
+                        <li>Resource alerts</li><br>
+                        <li>Scenario modeling</li>
+                    </ul>
+                </article>
+            </section>
+        </section>
+    </main>
+    
+    <script src="../Scripts/reseacher.js"></script>
+</body>
 
-    <header>
-        <h1 id="title">RESEARCHER'S HOME PAGE</h1>
-        <h3 id="welcome">Welcome, <%= user.username %>!</h3>
-    </header>
-
-    <!-- Slideshow Section -->
-    <section id="slideshow" aria-label="Slideshow of Research Highlights">
-        <figure class="slide">
-            <img src="/research1.png" alt="Research team discussing data" />
-            <figcaption>Collaborate with top minds and share ideas in real-time</figcaption>
-        </figure>
-        <figure class="slide">
-            <img src="/research5.jpg" alt="Project dashboard screenshot" />
-            <figcaption>Track your research progress from idea to publication</figcaption>
-        </figure>
-        <figure class="slide">
-            <img src="/research4.webp" alt="Researcher working in lab" />
-            <figcaption>Define requirements and manage resources efficiently</figcaption>
-        </figure>
-    </section>
-
-    <!-- Create Project Section -->
-    <section id="create-project" aria-labelledby="create-project-heading">
-        <h2 id="create-project-heading">Start a New Research Project</h2>
-        <h4>Have a new idea? Launch your research project here. Specify your research goals, resources needed, and open collaboration slots for others to join!<h4>
-        <form action="/researcher/projects/create" method="get">
-            <button type="submit">Create Project</button>
-        </form>
-    </section>
-
-    <!-- View Projects Section -->
-    <section id="my-projects" aria-labelledby="my-projects-heading">
-        <h2 id="my-projects-heading">Your Projects</h2>
-        <h4>View all the research projects you've created or collaborated on. Monitor progress, update requirements, and manage team members easily.</h4>
-        <form action="/researcher/projects/my-projects" method="get">
-            <button type="submit">View My Projects</button>
-        </form>
-    </section>
-
-</main>
-
-<script src="../Scripts/reseacher.js"></script>
 <%- include('partials/footer') %>
