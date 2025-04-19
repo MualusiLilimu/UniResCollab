@@ -63,4 +63,19 @@ exports.viewProjectDetails = async (req, res) => {
   }
 };
 
+
+
+exports.ResearcherHome = async (req, res) => {
+  try {
+    // Fetch all projects for the logged-in researcher
+    const projects = await Project.find({ createdBy: req.user._id });
+
+    // Render the 'ResearcherHome' view and pass the projects to it
+    res.render('ResearcherHome', { projects: projects });
+  } catch (err) {
+    console.error('Error fetching projects:', err);
+    res.status(500).send('Error retrieving your projects');
+  }
+};
+
 //You can add a function to update the project here in this file and also for inviting collaborators

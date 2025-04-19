@@ -1,35 +1,17 @@
 const mongoose = require('mongoose');
 
 const projectSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true
-  },
-  description: {
-    type: String,
-    required: true
-  },
-  requirements: {
-    type: [String], 
-    required: true
-  },
-  createdBy: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User', // Here I am referencing to the Researcher who created the project
-    required: true
-  },
-  collaborators: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User' // Here I am listing all collaborators who are invited to work on the project
-  }],
-  isPublic: {
-    type: Boolean,
-    default: true // This is to indicate whether the project public or private
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now
-  }
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  title: { type: String, required: true, minlength: 15 },
+  domain: { type: String, required: true },
+  abstract: { type: String, required: true },
+  startDate: { type: Date, required: true },
+  endDate: { type: Date, required: true },
+  methodology: [{ type: String }],
+  collaborators: [{ type: String }],
+  visibility: { type: String, required: true },
+  ethics: { type: String, required: true },
+  dataPolicy: { type: String },
+  createdAt: { type: Date, default: Date.now }
 });
-
 module.exports = mongoose.model('projects', projectSchema);
