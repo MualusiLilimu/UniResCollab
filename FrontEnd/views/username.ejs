@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+<body>
+    <main class="container">
+        <section class="card">
+            <h1>Enter Your Username</h1>
+            <% if (typeof error !== 'undefined') { %>
+                <p style="color: red;"><%= error %></p>
+            <% } %>
+            <form action="/username" method="POST" id="inputbtn">
+                <label for="username">Username
+                    <input type="text" name="username" id="username" required>
+                </label>
+                <button type="submit">Continue</button>
+            </form>
+        </section>
+    </main>
+</body>
+
+<script src="../Scripts/reseacher.js"></script>
+<%- include('partials/footer') %>

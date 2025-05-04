@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Share PDFs</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1>Upload a PDF File</h1>
+  <form action="http://localhost:3000/upload" method="POST" enctype="multipart/form-data">
+
+    <input type="file" name="pdf" accept=".pdf" required>
+    <button type="submit">Upload</button>
+  </form>
+
+  <h1>Uploaded Files</h1>
+  <ul id="fileList">
+    <% if (typeof files !== 'undefined' && files.length > 0) { %>
+      <% files.forEach(function(file) { %>
+        <li>
+          <a href="/files/<%= file._id %>" target="_blank"><%= file.name %></a>
+        </li>
+      <% }); %>
+    <% } else { %>
+      <li>No files uploaded yet.</li>
+    <% } %>
+  </ul>
+</body>
+</html>
