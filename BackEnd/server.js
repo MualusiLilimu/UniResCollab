@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const aiRoute = require('./Routes/aiRoute'); // The route to the ai chatbox
 const session = require('express-session');
 const passport = require('./config/passport');
 const authRoutes = require('./Routes/authRoutes');
@@ -46,6 +47,8 @@ app.use('/', authRoutes);
 app.use('/', userRoute);
 app.use('/researcher/projects', projectRouter);
 app.use('/tools', toolsRouter);
+app.use('/api', aiRoute); // Ai route for chatbox
+
 
 // Admin Home
 app.get('/Admin/Home', (req, res) => {
