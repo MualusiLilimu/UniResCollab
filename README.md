@@ -3,6 +3,7 @@
 
 ## install the following dependecies:
 
+
    "bcrypt": "^5.1.1",
     "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
